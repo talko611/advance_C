@@ -5,10 +5,10 @@
 #define SIZE 100
 
 int **pointerSort(int *arr, unsigned int size, int ascendFlag);
-void mergeSortP(int **arr, int size, int flag);
-int **merge(int **arr1, int size1, int **arr2, int size2, int flag);
-void copyArr(int **dest, int **src, int size);
-int compare(int a, int b, int flag);
+void mergeSortP(int **arr, int size, int flag);//sort array using merage sort algorithm working with local array
+int **merge(int **arr1, int size1, int **arr2, int size2, int flag);//used in mergeSortP - combine the part of the array in sorted way according to flag value 
+void copyArr(int **dest, int **src, int size);//used in mergeSortP - copies the local array of mergeSortP function to the return array
+int compare(int a, int b, int flag);//used in merge function - return true/false according to the flag value 
 void printPointers(int** pointersArr, int size);
 
 void main()
@@ -29,7 +29,7 @@ void main()
     for (i = 0; i < size; i++){
         scanf("%d", &arr[i]);
     }
-    printf("please enter ascending/decending flag\n");//remove later
+    
     scanf("%d", &ascend_flag);
     
     pointers = pointerSort(arr, size, ascend_flag);
@@ -135,7 +135,7 @@ void copyArr(int **dest, int **src, int size)
     }
 }
 
-int compare(a, b, flag) {
+int compare(int a, int b, int flag) {
     if (flag == 1) {
         return a < b;
     }
