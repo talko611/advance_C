@@ -50,5 +50,6 @@ Thumbs.db
 
 # file name 
 opt
+test.c
 test.dSYM
 *.json
